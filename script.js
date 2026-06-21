@@ -80,7 +80,7 @@ function renderScreen() {
 function nextScreen() {
   currentScreen++;
   renderScreen();
-  createSparkles(8);
+  createSparkles(28);
 }
 
 function rejectQuest() {
@@ -107,21 +107,30 @@ function acceptQuest() {
     <h1 class="final-message">Please turn around.</h1>
     <p>Your next reward is waiting in the living room.</p>
   `;
-  createSparkles(24);
+  createSparkles(70);
 }
 
 function createSparkles(amount) {
+  const icons = ["✨", "⭐", "💖", "🎮", "🌸", "💫", "💕"];
+
   for (let i = 0; i < amount; i++) {
     const sparkle = document.createElement("div");
     sparkle.className = "sparkle";
-    sparkle.textContent = ["✨", "⭐", "💖", "🎮"][Math.floor(Math.random() * 4)];
+    sparkle.textContent = icons[Math.floor(Math.random() * icons.length)];
+
     sparkle.style.left = Math.random() * window.innerWidth + "px";
-    sparkle.style.top = window.innerHeight - 80 + Math.random() * 40 + "px";
+    sparkle.style.top = Math.random() * window.innerHeight + "px";
+
+    sparkle.style.setProperty("--move-x", `${Math.random() * 240 - 120}px`);
+    sparkle.style.setProperty("--move-y", `${Math.random() * 240 - 120}px`);
+    sparkle.style.setProperty("--rotate", `${Math.random() * 360}deg`);
+    sparkle.style.setProperty("--size", `${18 + Math.random() * 18}px`);
+
     document.body.appendChild(sparkle);
 
     setTimeout(() => {
       sparkle.remove();
-    }, 1500);
+    }, 1800);
   }
 }
 
