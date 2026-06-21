@@ -85,27 +85,17 @@ function nextScreen() {
 
 function rejectQuest() {
   const noButton = document.getElementById("noButton");
-  const zone = document.querySelector(".no-zone");
 
-  if (!noButton || !zone) return;
+  if (!noButton) return;
 
   noButton.textContent = noMessages[noCount % noMessages.length];
 
-  const zoneWidth = zone.clientWidth;
-  const zoneHeight = zone.clientHeight;
-
-  const buttonWidth = Math.min(noButton.offsetWidth || 220, zoneWidth - 10);
-  const buttonHeight = noButton.offsetHeight || 50;
-
-  const maxX = Math.max(0, zoneWidth - buttonWidth);
-  const maxY = Math.max(0, zoneHeight - buttonHeight);
-
-  const randomX = Math.floor(Math.random() * (maxX + 1));
-  const randomY = Math.floor(Math.random() * (maxY + 1));
-
-  noButton.style.left = `${randomX}px`;
-  noButton.style.top = `${randomY}px`;
-  noButton.style.transform = "none";
+  // Move away only on the first click
+  if (noCount === 0) {
+    noButton.style.left = "calc(50% + 55px)";
+    noButton.style.top = "58px";
+    noButton.style.transform = "translateX(-50%)";
+  }
 
   noCount++;
   createSparkles(4);
