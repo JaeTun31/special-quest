@@ -80,21 +80,11 @@ function nextScreen() {
 }
 
 function rejectQuest() {
-  const noButton = document.getElementById("noButton");
   const noMessage = document.getElementById("noMessage");
 
-  if (!noButton || !noMessage) return;
+  if (!noMessage) return;
 
   noMessage.textContent = noMessages[noCount % noMessages.length];
-
-  // Small avoidance animation only on the first No click
-  if (noCount === 0) {
-    noButton.classList.add("avoid-once");
-
-    setTimeout(() => {
-      noButton.classList.remove("avoid-once");
-    }, 450);
-  }
 
   noCount++;
 }
