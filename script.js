@@ -192,32 +192,32 @@ function startPlatformer() {
   platformGameActive = true;
 
   const world = {
-    width: 720,
-    height: 2750
+  width: 640,
+  height: 2750
   };
 
-  const player = {
-    x: 70,
-    y: world.height - 100,
-    width: 44,
-    height: 54,
-    vx: 0,
-    vy: 0,
-    speed: 0.72,
-    maxSpeed: 6.4,
-    jumpPower: 14.5,
-    gravity: 0.62,
-    friction: 0.82,
-    onGround: false,
-    spawnX: 70,
-    spawnY: world.height - 100
-  };
+const player = {
+  x: 70,
+  y: world.height - 100,
+  width: 44,
+  height: 54,
+  vx: 0,
+  vy: 0,
+  speed: 0.45,
+  maxSpeed: 4.2,
+  jumpPower: 12.4,
+  gravity: 0.42,
+  friction: 0.86,
+  onGround: false,
+  spawnX: 70,
+  spawnY: world.height - 100
+};
 
-  const ring = {
-    x: 590,
-    y: 72,
-    radius: 28
-  };
+const ring = {
+  x: 320,
+  y: 112,
+  radius: 28
+};
 
   const platforms = [
     { x: 0, y: 2715, width: 720, height: 35 },
@@ -244,7 +244,7 @@ function startPlatformer() {
 
     { x: 525, y: 430, width: 150, height: 22 },
     { x: 315, y: 295, width: 185, height: 22 },
-    { x: 510, y: 160, width: 170, height: 22 }
+    { x: 235, y: 160, width: 170, height: 22 }
   ];
 
   const playerImg = new Image();
