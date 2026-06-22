@@ -108,7 +108,7 @@ function rejectQuest() {
 function acceptQuest() {
   screen.innerHTML = `
     <span class="badge">QUEST ACCEPTED</span>
-    <h1 class="final-message">Please turn around.</h1>
+    <h1 class="final-message">A wise choice, Summoner.</h1>
     <p>Your next reward is waiting in the living room.</p>
   `;
 }
