@@ -34,7 +34,6 @@ const screens = [
 
 const noMessages = [
   "No option temporarily unavailable.",
-  "Are you sure? The quest rewards are really good.",
   "Incorrect input. Please try again.",
   "Error 404: Rejection not found.",
   "The No button has left the lobby.",
