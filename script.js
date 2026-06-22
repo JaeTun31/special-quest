@@ -248,10 +248,7 @@ const ring = {
   ];
 
   const playerImg = new Image();
-  playerImg.src = "chopper.png";
-
-  const helperImg = new Image();
-  helperImg.src = "serapine.png";
+  playerImg.src = "izy.png";
 
   let cameraY = world.height - canvas.height;
 
