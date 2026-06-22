@@ -36,6 +36,7 @@ const screens = [
   text: "Choose carefully. This may affect the entire storyline.",
   proposal: true
 }
+];
 
 const noMessages = [
   "No option temporarily unavailable.",
