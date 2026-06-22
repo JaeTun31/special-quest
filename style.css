@@ -286,8 +286,10 @@ button:hover {
   }
 
   .game-wrap {
-  width: min(100%, 720px);
-  margin: 14px auto 10px;
+  width: 100%;
+  max-width: 640px;
+  margin: 18px auto 10px;
+  align-self: center;
   border: 1px solid rgba(255, 209, 220, 0.45);
   border-radius: 18px;
   overflow: hidden;
@@ -301,7 +303,7 @@ button:hover {
   height: auto;
   outline: none;
 }
-
+  
 .game-hint {
   margin-top: 10px;
   margin-bottom: 0;
