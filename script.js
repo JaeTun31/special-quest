@@ -3,7 +3,7 @@ const screen = document.getElementById("screen");
 const screens = [
   {
     badge: "IZYPENGU DETECTED",
-    title: "Welcome back.",
+    title: "Welcome!",
     text: "An important quest has appeared.",
     button: "Continue"
   },
@@ -18,8 +18,8 @@ const screens = [
     title: "Main Objective",
     text: "Accept a lifetime co-op campaign with me.",
     quest: [
-      "Difficulty: Cozy",
-      "Rewards: Unlimited hugs, snacks, inside jokes, and love",
+      "Difficulty: Easy",
+      "Rewards: Unlimited cuddles, food, bum-bum playtime, and love",
       "Required party members: You + me"
     ],
     button: "Review choice"
