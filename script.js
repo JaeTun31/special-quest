@@ -19,7 +19,7 @@ const screens = [
     text: "Accept a lifetime co-op campaign with me.",
     quest: [
       "Difficulty: Easy",
-      "Rewards: Unlimited cuddles, food, game, bum-bum playtime, and love",
+      "Rewards: Unlimited cuddles, food, bum-bum playtime, and love",
       "Required party members: You + me"
     ],
     button: "Review choice"
