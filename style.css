@@ -170,31 +170,41 @@ button:hover {
 .proposal-buttons {
   margin-top: 18px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 18px;
-  min-height: 170px;
-}
-
-.button-row {
-  display: flex;
   justify-content: center;
-}
-
-.no-zone {
-  position: relative;
-  width: min(420px, 92%);
-  height: 104px;
-  border-radius: 22px;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
 }
 
 .no-button {
-  position: absolute;
-  left: 50%;
-  top: 22px;
-  transform: translateX(-50%);
+  position: relative;
   white-space: nowrap;
-  max-width: 100%;
+}
+
+.no-message {
+  margin-top: 22px;
+  min-height: 32px;
+  font-weight: 700;
+  color: #ffd1dc;
+  opacity: 0.95;
+}
+
+.avoid-once {
+  animation: avoidOnce 0.45s ease;
+}
+
+@keyframes avoidOnce {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(34px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
 }
 
 .final-message {
