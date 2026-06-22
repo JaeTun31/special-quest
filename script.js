@@ -60,13 +60,10 @@ function renderScreen() {
       data.proposal
         ? `
         <div class="proposal-buttons">
-          <div class="button-row">
-            <button class="primary" onclick="acceptQuest()">Yes, I accept</button>
-          </div>
-          <div class="no-zone">
-            <button id="noButton" class="secondary no-button" onclick="rejectQuest()">No</button>
-          </div>
+          <button class="primary" onclick="acceptQuest()">Yes, I accept</button>
+          <button id="noButton" class="secondary no-button" onclick="rejectQuest()">No</button>
         </div>
+        <p id="noMessage" class="no-message"></p>
       `
         : `
         <div class="buttons">
@@ -80,25 +77,26 @@ function renderScreen() {
 function nextScreen() {
   currentScreen++;
   renderScreen();
-  createSparkles(28);
 }
 
 function rejectQuest() {
   const noButton = document.getElementById("noButton");
+  const noMessage = document.getElementById("noMessage");
 
-  if (!noButton) return;
+  if (!noButton || !noMessage) return;
 
-  noButton.textContent = noMessages[noCount % noMessages.length];
+  noMessage.textContent = noMessages[noCount % noMessages.length];
 
-  // Move away only on the first click
+  // Small avoidance animation only on the first No click
   if (noCount === 0) {
-    noButton.style.left = "calc(50% + 55px)";
-    noButton.style.top = "58px";
-    noButton.style.transform = "translateX(-50%)";
+    noButton.classList.add("avoid-once");
+
+    setTimeout(() => {
+      noButton.classList.remove("avoid-once");
+    }, 450);
   }
 
   noCount++;
-  createSparkles(4);
 }
 
 function acceptQuest() {
@@ -107,7 +105,6 @@ function acceptQuest() {
     <h1 class="final-message">Please turn around.</h1>
     <p>Your next reward is waiting in the living room.</p>
   `;
-  createSparkles(70);
 }
 
 function createSparkles(amount) {
@@ -133,5 +130,8 @@ function createSparkles(amount) {
     }, 1800);
   }
 }
+
+renderScreen();
+setTimeout(() => createSparkles(35), 400);
 
 renderScreen();
