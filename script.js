@@ -438,7 +438,7 @@ function drawPlayer(ctx, player, image) {
   ctx.save();
 
   if (image.complete && image.naturalWidth > 0) {
-    const spriteWidth = 92;
+    const spriteWidth = 102;
     const spriteHeight = 92;
 
     const spriteX = player.x + player.width / 2 - spriteWidth / 2;
