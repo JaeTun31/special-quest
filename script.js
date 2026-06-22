@@ -13,24 +13,29 @@ const screens = [
     text: "This quest can only be completed by my favourite person to exist with.",
     button: "Open quest"
   },
-  {
-    badge: "QUEST DETAILS",
-    title: "Main Objective",
-    text: "Accept a lifetime co-op campaign with me.",
-    quest: [
-      "Difficulty: Easy",
-      "Rewards: Unlimited cuddles, food, bum-bum playtime, and love",
-      "Required party members: You + me"
-    ],
-    button: "Review choice"
-  },
-  {
-    badge: "FINAL CONFIRMATION",
-    title: "Will you be my forever duo partner?",
-    text: "Choose carefully. This may affect the entire storyline.",
-    proposal: true
-  }
-];
+{
+  badge: "QUEST DETAILS",
+  title: "Main Objective",
+  text: "Accept a lifetime co-op campaign with me.",
+  quest: [
+    "Difficulty: Easy",
+    "Rewards: Unlimited cuddles, food, bum-bum playtime, and love",
+    "Required party members: You + me"
+  ],
+  button: "Start quest"
+},
+{
+  badge: "PLATFORMING QUEST",
+  title: "Reach the ring.",
+  text: "Use the arrow keys to move and Space to jump. Reach the top to unlock the final quest.",
+  game: true
+},
+{
+  badge: "FINAL CONFIRMATION",
+  title: "Will you be my forever duo partner?",
+  text: "Choose carefully. This may affect the entire storyline.",
+  proposal: true
+}
 
 const noMessages = [
   "No option temporarily unavailable.",
