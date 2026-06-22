@@ -10,7 +10,7 @@ const screens = [
   {
     badge: "NEW QUEST AVAILABLE",
     title: "Special Quest",
-    text: "This quest can only be completed by my favourite person to game, laugh, snack, and exist with.",
+    text: "This quest can only be completed by my favourite person to exist with.",
     button: "Open quest"
   },
   {
@@ -19,7 +19,7 @@ const screens = [
     text: "Accept a lifetime co-op campaign with me.",
     quest: [
       "Difficulty: Easy",
-      "Rewards: Unlimited cuddles, food, bum-bum playtime, and love",
+      "Rewards: Unlimited cuddles, food, game, bum-bum playtime, and love",
       "Required party members: You + me"
     ],
     button: "Review choice"
