@@ -352,8 +352,6 @@ const ring = {
 
     drawRing(ctx, ring.x, ring.y);
 
-    drawHelper(ctx, helperImg, 70, 72);
-
     drawPlayer(ctx, player, playerImg);
 
     ctx.restore();
@@ -432,25 +430,6 @@ function drawRing(ctx, x, y) {
   ctx.textAlign = "center";
   ctx.textBaseline = "middle";
   ctx.fillText("💍", x, y);
-
-  ctx.restore();
-}
-
-function drawHelper(ctx, image, x, y) {
-  ctx.save();
-
-  if (image.complete && image.naturalWidth > 0) {
-    ctx.drawImage(image, x, y, 82, 82);
-  } else {
-    ctx.fillStyle = "rgba(255, 209, 220, 0.8)";
-    roundRect(ctx, x, y, 82, 82, 22);
-    ctx.fill();
-
-    ctx.fillStyle = "#402236";
-    ctx.font = "12px Trebuchet MS";
-    ctx.textAlign = "center";
-    ctx.fillText("Helper", x + 41, y + 45);
-  }
 
   ctx.restore();
 }
