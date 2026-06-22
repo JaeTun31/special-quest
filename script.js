@@ -237,7 +237,7 @@ const ring = {
     { x: 355, y: 1240, width: 195, height: 22 },
     { x: 150, y: 1105, width: 150, height: 22 },
 
-    { x: 475, y: 970, width: 170, height: 22 },
+    { x: 400, y: 970, width: 170, height: 22 },
     { x: 265, y: 835, width: 160, height: 22 },
     { x: 55, y: 700, width: 165, height: 22 },
     { x: 335, y: 565, width: 175, height: 22 },
