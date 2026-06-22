@@ -438,7 +438,7 @@ function drawPlayer(ctx, player, image) {
   ctx.save();
 
   if (image.complete && image.naturalWidth > 0) {
-    ctx.drawImage(image, player.x - 8, player.y - 10, player.width + 16, player.height + 16);
+    ctx.drawImage(image, player.x - 18, player.y - 28, player.width + 36, player.height + 46);
   } else {
     ctx.fillStyle = "#ffd1dc";
     roundRect(ctx, player.x, player.y, player.width, player.height, 14);
