@@ -203,10 +203,10 @@ const player = {
   height: 54,
   vx: 0,
   vy: 0,
-  speed: 0.32,
+  speed: 0.25,
   maxSpeed: 3.2,
   jumpPower: 10.8,
-  gravity: 0.32,
+  gravity: 0.25,
   friction: 0.88,
   onGround: false,
   spawnX: 70,
@@ -438,7 +438,7 @@ function drawPlayer(ctx, player, image) {
   ctx.save();
 
   if (image.complete && image.naturalWidth > 0) {
-    const spriteWidth = 82;
+    const spriteWidth = 92;
     const spriteHeight = 92;
 
     const spriteX = player.x + player.width / 2 - spriteWidth / 2;
