@@ -18,7 +18,7 @@ const screens = [
   title: "Mission Brief",
   text: "Complete the tasks below to unlock the final event.",
   quest: [
-    "Task 1: Complete the Izypengu verification check",
+    "Task 1: Complete the verification check",
     "Task 2: Reach the ring",
     "Reward: Final event unlocked",
     "Required party members: You + me"
@@ -46,43 +46,43 @@ const screens = [
 ];
 
 const noMessages = [
-  "No option temporarily unavailable.",
+  "The No button has left the lobby.",
   "Incorrect input. Please try again.",
   "Error 404: Rejection not found.",
-  "The No button has left the lobby.",
-  "Please consult your heart and try again."
+  "No option temporarily unavailable."
 ];
 
 const quizQuestions = [
   {
-    question: "Who is the best duo partner?",
+    question: "Where was our first date?",
     options: [
-      "You",
-      "Me",
-      "Obviously both of us"
+      "Ambleside Park",
+      "West Van Library",
+      "Escape Room"
     ],
     correct: 2,
-    wrongMessage: "Suspicious answer detected. Please try again."
+    wrongMessage: "Why you being sus? Try again."
   },
   {
-    question: "What is the correct response to “one more game”?",
+    question: "What’s our favourite thing to do together?",
     options: [
-      "One more",
-      "Maybe two more",
-      "We both know it is never just one"
+      "Eat good food",
+      "Play video games",
+      "Cuddle",
+      "Watch shows",
+      "All of the above"
     ],
-    correct: 2,
-    wrongMessage: "Incorrect. History says otherwise."
+    correct: 5,
+    wrongMessage: "Don't be restarted. Try again."
   },
   {
-    question: "What should Izypengu do when a mysterious ring appears?",
+    question: "Do you love me?",
     options: [
-      "Inspect it",
-      "Equip it",
-      "Follow the final objective"
+      "Yes",
+      "No"
     ],
-    correct: 2,
-    wrongMessage: "Almost. Try thinking like the main character."
+    correct: 1,
+    wrongMessage: "Don't be a cum-fuck-bastard and select the correct one."
   }
 ];
 
