@@ -203,7 +203,7 @@ const player = {
   height: 54,
   vx: 0,
   vy: 0,
-  speed: 0.15,
+  speed: 0.22,
   maxSpeed: 3.2,
   jumpPower: 8,
   gravity: 0.15,
