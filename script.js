@@ -4,36 +4,43 @@ const screens = [
   {
     badge: "IZYPENGU DETECTED",
     title: "Welcome!",
-    text: "An important quest has appeared.",
+    text: "The long awaited time has come.",
     button: "Continue"
   },
   {
-    badge: "NEW QUEST AVAILABLE",
-    title: "Special Quest",
-    text: "This quest can only be completed by my favourite person to exist with.",
-    button: "Open quest"
+    badge: "SPECIAL EVENT UNLOCKED",
+    title: "A Little Mission",
+    text: "This one was made just for my dear babier.",
+    button: "View tasks"
   },
 {
-  badge: "QUEST DETAILS",
-  title: "Main Objective",
-  text: "Accept a lifetime co-op campaign with me.",
+  badge: "TASK DETAILS",
+  title: "Mission Brief",
+  text: "Complete the tasks below to unlock the final event.",
   quest: [
-    "Difficulty: Easy",
-    "Rewards: Unlimited cuddles, bum-bum playtime, and love",
+    "Task 1: Complete the Izypengu verification check",
+    "Task 2: Reach the ring",
+    "Reward: Final event unlocked",
     "Required party members: You + me"
   ],
-  button: "Start quest"
+  button: "Begin tasks"
 },
 {
-  badge: "PLATFORMING QUEST",
+  badge: "TASK 1",
+  title: "Izypengu Verification",
+  text: "Answer these very important questions to continue.",
+  quiz: true
+},
+{
+  badge: "TASK 2",
   title: "Reach the ring.",
-  text: "Use the arrow keys to move and Space to jump. Reach the top to unlock the final quest.",
+  text: "Use the arrow keys to move and Space to jump. Reach the top to unlock the final event.",
   game: true
 },
 {
   badge: "FINAL CONFIRMATION",
   title: "Will you be my forever duo partner?",
-  text: "Choose carefully. This may affect the entire storyline.",
+  text: "No pressure, but this choice may affect the entire storyline.",
   proposal: true
 }
 ];
@@ -46,11 +53,51 @@ const noMessages = [
   "Please consult your heart and try again."
 ];
 
+const quizQuestions = [
+  {
+    question: "Who is the best duo partner?",
+    options: [
+      "You",
+      "Me",
+      "Obviously both of us"
+    ],
+    correct: 2,
+    wrongMessage: "Suspicious answer detected. Please try again."
+  },
+  {
+    question: "What is the correct response to “one more game”?",
+    options: [
+      "One more",
+      "Maybe two more",
+      "We both know it is never just one"
+    ],
+    correct: 2,
+    wrongMessage: "Incorrect. History says otherwise."
+  },
+  {
+    question: "What should Izypengu do when a mysterious ring appears?",
+    options: [
+      "Inspect it",
+      "Equip it",
+      "Follow the final objective"
+    ],
+    correct: 2,
+    wrongMessage: "Almost. Try thinking like the main character."
+  }
+];
+
+let currentQuizQuestion = 0;
+
 let currentScreen = 0;
 let noCount = 0;
 
 function renderScreen() {
   const data = screens[currentScreen];
+
+  if (data.quiz) {
+    renderQuizScreen(data);
+    return;
+  }
 
   if (data.game) {
     screen.innerHTML = `
@@ -141,6 +188,80 @@ function createSparkles(amount) {
       sparkle.remove();
     }, 1800);
   }
+}
+
+function renderQuizScreen(data) {
+  currentQuizQuestion = 0;
+
+  screen.innerHTML = `
+    <span class="badge">${data.badge}</span>
+    <h1>${data.title}</h1>
+    <p>${data.text}</p>
+
+    <div class="quiz-box">
+      <p id="quizProgress" class="quiz-progress"></p>
+      <h2 id="quizQuestion" class="quiz-question"></h2>
+      <div id="quizOptions" class="quiz-options"></div>
+      <p id="quizFeedback" class="quiz-feedback"></p>
+    </div>
+  `;
+
+  renderQuizQuestion();
+}
+
+function renderQuizQuestion() {
+  const question = quizQuestions[currentQuizQuestion];
+
+  document.getElementById("quizProgress").textContent =
+    `Question ${currentQuizQuestion + 1} of ${quizQuestions.length}`;
+
+  document.getElementById("quizQuestion").textContent = question.question;
+
+  document.getElementById("quizFeedback").textContent = "";
+
+  const optionsContainer = document.getElementById("quizOptions");
+
+  optionsContainer.innerHTML = question.options
+    .map((option, index) => {
+      return `
+        <button class="quiz-option" onclick="answerQuiz(${index})">
+          ${option}
+        </button>
+      `;
+    })
+    .join("");
+}
+
+function answerQuiz(selectedIndex) {
+  const question = quizQuestions[currentQuizQuestion];
+  const feedback = document.getElementById("quizFeedback");
+
+  if (selectedIndex !== question.correct) {
+    feedback.textContent = question.wrongMessage;
+    return;
+  }
+
+  currentQuizQuestion++;
+
+  if (currentQuizQuestion >= quizQuestions.length) {
+    screen.innerHTML = `
+      <span class="badge">VERIFICATION COMPLETE</span>
+      <h1>Task 1 complete.</h1>
+      <p>Izypengu verification passed. Task 2 has been unlocked.</p>
+
+      <div class="buttons">
+        <button class="primary" onclick="completeQuiz()">Continue</button>
+      </div>
+    `;
+    return;
+  }
+
+  renderQuizQuestion();
+}
+
+function completeQuiz() {
+  currentScreen++;
+  renderScreen();
 }
 
 /* -----------------------------
