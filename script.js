@@ -38,9 +38,9 @@ const screens = [
   game: true
 },
 {
-  badge: "FINAL CONFIRMATION",
+  badge: "THE QUESTION",
   title: "Will you be my forever duo partner?",
-  text: "No pressure, but this choice may affect the entire storyline.",
+  text: "To be honest, if you say no, you will probably die alone",
   proposal: true
 }
 ];
@@ -82,7 +82,7 @@ const quizQuestions = [
       "No"
     ],
     correct: 0,
-    wrongMessage: "Don't be a cum-fuck-bastard and select the correct one."
+    wrongMessage: "Don't be a cum-fuck-bastard."
   }
 ];
 
