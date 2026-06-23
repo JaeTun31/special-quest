@@ -60,7 +60,7 @@ const quizQuestions = [
       "West Van Library",
       "Escape Room"
     ],
-    correct: 2,
+    correct: 1,
     wrongMessage: "Why you being sus? Try again."
   },
   {
@@ -72,7 +72,7 @@ const quizQuestions = [
       "Watch shows",
       "All of the above"
     ],
-    correct: 5,
+    correct: 4,
     wrongMessage: "Don't be restarted. Try again."
   },
   {
@@ -81,7 +81,7 @@ const quizQuestions = [
       "Yes",
       "No"
     ],
-    correct: 1,
+    correct: 0,
     wrongMessage: "Don't be a cum-fuck-bastard and select the correct one."
   }
 ];
