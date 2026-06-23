@@ -502,7 +502,7 @@ function completePlatformQuest() {
   screen.innerHTML = `
     <span class="badge">RING ACQUIRED</span>
     <h1>Congrats!</h1>
-    <p>You reached the ring. Now on to your final task.</p>
+    <p>You reached the ring. You have unlocked "The Question".</p>
 
     <div class="buttons">
       <button class="primary" onclick="goToFinalTask()">Continue</button>
