@@ -499,6 +499,18 @@ function completePlatformQuest() {
     cancelAnimationFrame(platformAnimationId);
   }
 
+  screen.innerHTML = `
+    <span class="badge">RING ACQUIRED</span>
+    <h1>Congrats!</h1>
+    <p>You reached the ring. Now on to your final task.</p>
+
+    <div class="buttons">
+      <button class="primary" onclick="goToFinalTask()">Continue</button>
+    </div>
+  `;
+}
+
+function goToFinalTask() {
   currentScreen++;
   renderScreen();
 }
