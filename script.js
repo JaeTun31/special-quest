@@ -69,7 +69,7 @@ const quizQuestions = [
       "Eat good food",
       "Play video games",
       "Cuddle",
-      "Watch shows",
+      "Watch shows, movies, and anime",
       "All of the above"
     ],
     correct: 4,
