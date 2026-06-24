@@ -40,16 +40,13 @@ const screens = [
 {
   badge: "THE QUESTION",
   title: "Will you be my forever duo partner?",
-  text: "To be honest, if you say no, you will probably die alone",
+  text: "If you say no, you will probably die alone.",
   proposal: true
 }
 ];
 
 const noMessages = [
-  "The No button has left the lobby.",
-  "Incorrect input. Please try again.",
-  "Error 404: Rejection not found.",
-  "No option temporarily unavailable."
+  "The No button has left the lobby."
 ];
 
 const quizQuestions = [
@@ -130,7 +127,14 @@ function renderScreen() {
         ? `
         <div class="proposal-buttons">
           <button class="primary" onclick="acceptQuest()">Yes, I accept</button>
-          <button id="noButton" class="secondary no-button" onclick="rejectQuest()">No</button>
+          <button 
+  id="noButton" 
+  class="secondary no-button" 
+  onclick="rejectQuest()" 
+  onmouseenter="dodgeNoButton()"
+>
+  No
+</button>
         </div>
         <p id="noMessage" class="no-message"></p>
       `
@@ -156,6 +160,29 @@ function rejectQuest() {
   noMessage.textContent = noMessages[noCount % noMessages.length];
 
   noCount++;
+}
+
+function dodgeNoButton() {
+  const noButton = document.getElementById("noButton");
+  const noMessage = document.getElementById("noMessage");
+
+  if (!noButton) return;
+
+  const dodgePositions = [
+    { x: 90, y: -24 },
+    { x: 120, y: 18 },
+    { x: 70, y: 42 },
+    { x: 150, y: -6 }
+  ];
+
+  const randomPosition =
+    dodgePositions[Math.floor(Math.random() * dodgePositions.length)];
+
+  noButton.style.transform = `translate(${randomPosition.x}px, ${randomPosition.y}px)`;
+
+  if (noMessage) {
+    noMessage.textContent = "The No button has left the lobby.";
+  }
 }
 
 function acceptQuest() {
