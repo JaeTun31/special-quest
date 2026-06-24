@@ -45,10 +45,6 @@ const screens = [
 }
 ];
 
-const noMessages = [
-  "The No button has left the lobby."
-];
-
 const quizQuestions = [
   {
     question: "Where was our first date?",
