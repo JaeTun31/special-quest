@@ -158,28 +158,68 @@ function rejectQuest() {
   noCount++;
 }
 
-function dodgeNoButton() {
+let noDodgeX = 0;
+let noDodgeY = 0;
+
+function dodgeNoButton(event) {
   const noButton = document.getElementById("noButton");
   const noMessage = document.getElementById("noMessage");
 
   if (!noButton) return;
 
-  const dodgePositions = [
-    { x: 90, y: -24 },
-    { x: 120, y: 18 },
-    { x: 70, y: 42 },
-    { x: 150, y: -6 }
-  ];
+  const maxMoveX = 170;
+  const maxMoveY = 80;
 
-  const randomPosition =
-    dodgePositions[Math.floor(Math.random() * dodgePositions.length)];
+  let moveX;
+  let moveY;
 
-  noButton.style.transform = `translate(${randomPosition.x}px, ${randomPosition.y}px)`;
+  if (event) {
+    const rect = noButton.getBoundingClientRect();
+    const buttonCenterX = rect.left + rect.width / 2;
+    const buttonCenterY = rect.top + rect.height / 2;
+
+    const awayX = buttonCenterX - event.clientX;
+    const awayY = buttonCenterY - event.clientY;
+
+    const length = Math.hypot(awayX, awayY) || 1;
+
+    moveX = noDodgeX + (awayX / length) * 85;
+    moveY = noDodgeY + (awayY / length) * 55;
+  } else {
+    moveX = noDodgeX + (Math.random() > 0.5 ? 110 : -110);
+    moveY = noDodgeY + (Math.random() > 0.5 ? 45 : -45);
+  }
+
+  noDodgeX = Math.max(-maxMoveX, Math.min(maxMoveX, moveX));
+  noDodgeY = Math.max(-maxMoveY, Math.min(maxMoveY, moveY));
+
+  noButton.style.transform = `translate(${noDodgeX}px, ${noDodgeY}px)`;
 
   if (noMessage) {
     noMessage.textContent = "The No button has left the lobby.";
   }
 }
+
+function watchNoButton(event) {
+  const noButton = document.getElementById("noButton");
+
+  if (!noButton) return;
+
+  const rect = noButton.getBoundingClientRect();
+  const buttonCenterX = rect.left + rect.width / 2;
+  const buttonCenterY = rect.top + rect.height / 2;
+
+  const distance = Math.hypot(
+    event.clientX - buttonCenterX,
+    event.clientY - buttonCenterY
+  );
+
+  if (distance < 150) {
+    dodgeNoButton(event);
+  }
+}
+
+document.addEventListener("pointermove", watchNoButton);
 
 function acceptQuest() {
   screen.innerHTML = `
