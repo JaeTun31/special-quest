@@ -419,4 +419,10 @@ button:hover {
   }
 }
 
+.no-button {
+  transition: transform 0.22s ease;
+}
+
+
+
 
