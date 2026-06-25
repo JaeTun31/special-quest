@@ -30,18 +30,21 @@ const screens = [
   title: "Izypengu Verification",
   text: "Answer these very important questions to continue.",
   quiz: true
+  hideDecor: true
 },
 {
   badge: "TASK 2",
   title: "Reach the ring.",
   text: "Use the arrow keys to move and Space to jump. Reach the top to unlock the final event.",
   game: true
+  hideDecor: true
 },
 {
   badge: "THE QUESTION",
   title: "Will you be my forever duo partner?",
   text: "If you say no, you will probably die alone.",
   proposal: true
+  hideDecor: true
 }
 ];
 
@@ -86,6 +89,9 @@ let noCount = 0;
 
 function renderScreen() {
   const data = screens[currentScreen];
+
+  const card = document.querySelector(".card");
+  card.classList.toggle("hide-decor", data.hideDecor === true);
 
   if (data.quiz) {
     renderQuizScreen(data);
