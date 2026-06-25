@@ -194,10 +194,6 @@ function dodgeNoButton(event) {
   noDodgeY = Math.max(-maxMoveY, Math.min(maxMoveY, moveY));
 
   noButton.style.transform = `translate(${noDodgeX}px, ${noDodgeY}px)`;
-
-  if (noMessage) {
-    noMessage.textContent = "The No button has left the lobby.";
-  }
 }
 
 function watchNoButton(event) {
