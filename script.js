@@ -29,21 +29,21 @@ const screens = [
   badge: "TASK 1",
   title: "Izypengu Verification",
   text: "Answer these very important questions to continue.",
-  quiz: true
+  quiz: true,
   hideDecor: true
 },
 {
   badge: "TASK 2",
   title: "Reach the ring.",
   text: "Use the arrow keys to move and Space to jump. Reach the top to unlock the final event.",
-  game: true
+  game: true,
   hideDecor: true
 },
 {
   badge: "THE QUESTION",
   title: "Will you be my forever duo partner?",
   text: "If you say no, you will probably die alone.",
-  proposal: true
+  proposal: true,
   hideDecor: true
 }
 ];
