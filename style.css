@@ -423,6 +423,8 @@ button:hover {
   transition: transform 0.1s linear;
 }
 
-
+.card.hide-decor .decor {
+  display: none;
+}
 
 
